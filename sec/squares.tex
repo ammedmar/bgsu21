@@ -1,4 +1,4 @@
-%!TEX root = ../aberdeen21.tex
+%!TEX root = ../bgsu21.tex
 
 \begin{frame}[fragile]{Cup product}
 	\pause Alexander and Whitney defined the cup product by dualizing a chain approximation to the diagonal:
@@ -7,7 +7,7 @@
 	\]
 	\pause Similarly, Cartan and Serre constructed: $\gchains(\gcube^n) \to \gchains(\gcube^n) \otimes \gchains(\gcube^n)$.
 
-	\bigskip \pause
+	\bigskip\pause
 	As mentioned before, as graded rings,
 	\[
 	H^\bullet(\mathbb{C} P^2) \not\cong H^\bullet(S^2 \vee S^4).
@@ -37,7 +37,7 @@
 		\end{tikzpicture}
 	\end{center}
 
-	\medskip \pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
+	\medskip\pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
 	\[
 	\Delta_i \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2},
 	\qquad
@@ -95,7 +95,7 @@
 	\pause
 	Comparing with SAGE: (algorithm based on EZ-AW contraction)
 
-	\smallskip \pause
+	\smallskip\pause
 	\textcolor{pblue}{$Sq^1$} on \textcolor{pblue}{$\Sigma^i\R P^2$} ($i^\th$ suspension of the real projective plane)
 
 	\medskip
@@ -117,7 +117,7 @@
 	\]
 	The \textcolor{pblue}{$Sq^k$ barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
 
-	\bigskip \pause
+	\bigskip\pause
 
 	With \textit{Umberto Lupo} and \textit{Guillaume Tauzin} from \textcolor{pblue}{\texttt{giotto-tda}}'s team
 
@@ -129,7 +129,7 @@
 
 	Points in $\R^{24}$ (positions of $8$ carbons in $\R^3$)
 
-	\pause \smallskip
+	\pause\smallskip
 
 	Computing $Sq^1$ barcode of a ``smooth component'' of this point cloud
 
@@ -140,56 +140,63 @@
 	Consistent with a \textcolor{pblue}{Klein bottle} component.
 \end{frame}
 
-\begin{frame}{A glimpse at topological phases of matter}
+\begin{frame}{More on cup-$i$ constructions}
 
-	\vspace*{-5pt}
+	\pause
 
-	\textcolor{pblue}{Goal:} Classify \textbf{quantum systems} at low temperatures.
+	\begin{theorem}[Med.]
+		All cup-$i$ constructions in the literature are equal up isomorphism:
+		\[
+		\triangle \sim \triangle^\prime \iff \forall i \in \N, \ \triangle_i = \triangle_i^\prime \ \vee \, \triangle_i = T \triangle_i^\prime.
+		\]
+	\end{theorem}
 
-	\smallskip\pause
+	\medskip\pause
 
-	\textbf{Lattice model:} A Hamiltonian on a Hibert space associated to $d$-lattice.
+	\begin{theorem}[Med.]
+		Steenrod's cup-$i$ construction defines the nerve of higher categories.
+	\end{theorem}
 
-	\smallskip\pause
+	\medskip\pause
 
-	\textbf{Gapped} if spectrum bounded above $0$.
+	\begin{theorem}[Laplante-Afossi--Med.]
+		Let $P \subset \R^n$ be an $n$-dim convex polytope.
+		A generic basis of $\R^n$ defines a cellular cup-$i$ structure on $P$.
+	\end{theorem}
+\end{frame}
 
-	\smallskip\pause
+\begin{frame}{Relations and secondary operations}
 
-	Two in the same \textbf{phase} if $\exists$ gapped deformation between them.
+	\pause
 
-	\smallskip\pause
+	Cup-$i$ products are coboundaries witnessing the commutativity relation of cohomology.
+	\pause
+	There are two main relations of Steenrod squares.
+	\begin{block}{Cartan relation}
+		\vspace*{-10pt}
+		\begin{equation*}
+			Sq^k \big( [\alpha] [\beta] \big) =
+			\sum_{i+j=k} \, Sq^i\big([\alpha]\big) Sq^j\big([\beta]\big),
+		\end{equation*}
+	\end{block}
 
-	Associated Lagrangian on triang'ed mnfds.: cochains as \textbf{gauge~fields}
+	\pause
 
-	\smallskip\pause
+	\begin{block}{Adem relation}
+		\vspace*{-15pt}
+		\begin{equation*}
+			Sq^i Sq^j =
+			\sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j-k} Sq^k.
+		\end{equation*}
+	\end{block}
 
-	using finer cochain structures for interactions: e.g. cup-i product.
+	\pause
 
-	\smallskip\pause
+	\begin{block}{Construction (Brumfiel-Med.-Morgan)}
+		Explicit cochains witnessing these relations at the cochain level.
+	\end{block}
 
-	In certain cases, subdiv. invariance gives invertible (functorial) \textbf{TQFT}.
+	\pause
 
-	\smallskip\pause
-
-	\textbf{Ex:} Fermionic SPT phases conj'lly controlled by Spin bordism of $BG$.
-
-	\smallskip\pause
-
-	Verified in low dims using cochain model of (connective covers) of the (Pontryagin dual of) Spin spectrum. (Kapustin et al., Brumfiel--Morgan)
-
-	\smallskip\pause
-
-	\only<10>{
-	This used my work defining \textbf{Cartan coboundaries}.
-	\[
-	Sq^k(\alpha \beta) = \sum_{i+j=k} Sq^i(\alpha) Sq^j(\beta)
-	\]}
-
-	\only<11>{
-	With Brumfiel and Morgan we later defined \textbf{Adem coboundaries}.
-	\[
-	Sq^i Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j-k} Sq^k(\alpha)
-	\]
-	for all $i,j > 0$ such that $i < 2j$.}
+	Motivation came from physics (classification of topological phases).
 \end{frame}

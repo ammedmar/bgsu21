@@ -1,4 +1,4 @@
-%!TEX root = ../aberdeen21.tex
+%!TEX root = ../bgsu21.tex
 
 \begin{frame}[t]{Beyond the even prime}
 
@@ -23,32 +23,46 @@
 		defines an $E_\infty$-coalgebra on simplicial chains.
 	\end{theorem}
 
-	\pause \only<5>{\qquad \qquad \scalebox{0.7}{\input{aux/join}}} \pause
+	\pause
 
-	Used to introduce cup $(p,i)$-products effectively def. \textcolor{pblue}{Steenrod operations} on mod $p$ cohomology.
-	\pause (Implemented in \texttt{comch}, a project I develop.)
+	\only<5>{\qquad \qquad \scalebox{0.7}{\input{aux/join}}}
 
-	\smallskip\pause
+	\medskip\pause
 
-	\only<8>{Also, versions for: \textcolor{pblue}{cubical} (R. Kaufmann) and
-	\textcolor{pblue}{multisimplicial} chains (A. Pizzi \& P. Salvatore).}
+	\only<6>{Also, versions for: \par
+		\qquad \textcolor{pblue}{cubical} (Kaufmann--Med.) and \par
+		\qquad \textcolor{pblue}{multisimplicial} (Med.--Pizzi--Salvatore) chains.}
 \end{frame}
 
-\begin{frame}{Other math I would be happy to discuss with you}
-	\begin{itemize}
-		\item \pause Higher category theory
-		\item \pause Representation \& cohomology of small categories
-		\item \pause Algebraic surgery theory
-		\item \pause Geometric cohomology
-		\item \pause Functional topology \& persistence theory
-		\item \pause Higher information theory \& hyperharmonic analysis
-		\item \pause Adams'/Baues' cobar \& string topology
-		\item \pause Khovanov homology
-		\item \pause Fiber polytopes
-		\item \pause Frobenius algebras \& TQFTs
-		\item \pause $E_n$-operads \& Dyer-Lashoff-Cohen operations
-		\item \pause $C_\infty$-coalgebras \& rational homotopy theory
-		\item \pause $A_\infty$-algebras \& symplectic geometry
-		\item \dots
-	\end{itemize}
+\begin{frame}[fragile]{Cup-$(p,i)$ structures}
+
+	\vskip-5pt\pause
+
+	\begin{block}{Construction (Kaufmann-Med.)}
+		Explicit May--Steenrod structures defining \textcolor{pblue}{operations} on $H^\bullet(-; \Fp)$.
+	\end{block}
+
+	\pause
+
+	\begin{block}{Implementation (Med.)}
+		In the computer algebra system \verb|ComCH|.
+	\end{block}
+
+	\pause
+
+	For example, $\Delta_{3,2}[0,1,2]$ is equal to
+
+	\begin{verbatim}
+		- [0,1][0,1,2][0,1] + [0,1,2][0,2][0,1] + [0,2][0,2][0,1,2]
+		- [0,1,2][0,1,2][1] - [0,2][0,1,2][1,2] + [0,1,2][1,2][1,2]
+		- [0,1][1,2][0,1,2] - [0,1,2][2][0,1,2] - [0][0,1,2][0,1,2]
+	\end{verbatim}
+
+	\pause \textcolor{pblue}{Future directions:} \pause
+	\begin{enumerate}
+		\item Faster implementations for use in TDA. \pause \\
+		\item Relation to higher category theory. \pause \\
+		\item Cartan and Adem coboundaries. \pause \\
+		\item Where are these used in physics?
+	\end{enumerate}
 \end{frame}
