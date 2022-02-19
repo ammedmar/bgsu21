@@ -37,19 +37,28 @@
 		\end{tikzpicture}
 	\end{center}
 
-	\medskip\pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
+	\smallskip\pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
 	\[
 	\Delta_i \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2},
 	\qquad
 	\partial \Delta_{i} = \big(1 \pm T \big) \Delta_{i-1}
 	\]
-	inducing further structure on mod 2 cohomology:
+
+	\pause
+
+	These induce further structure:
 	\[
-	Sq^k \colon H^\bullet(X; \Ftwo) \to H^\bullet(X; \Ftwo).
+	\begin{split}
+		Sq^k \colon H^\bullet(X; \Ftwo) &\to H^\bullet(X; \Ftwo) \\
+		[\alpha] &\mapsto \big[ (\alpha \otimes \alpha) \Delta_i(-) \big]
+	\end{split}
 	\]
-	\pause \textcolor{pblue}{Distinguishes}
+
+	\vskip-5pt\pause
+
+	\textcolor{pblue}{Distinguishes}
 	\[
-	H^\bullet(\Sigma(\mathbb{C} P^2)) \not\cong H^\bullet(\Sigma(S^2 \vee S^4)).
+	H^\bullet(\Sigma(\mathbb{C} P^2)) \not\cong H^\bullet(\Sigma(S^2 \vee S^4))
 	\]
 \end{frame}
 
